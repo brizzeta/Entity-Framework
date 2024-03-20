@@ -1,0 +1,12 @@
+C:\Technologies\С#\entity\1. Entity Intro\Country\bin\Debug\net8.0\Country.deps.json
+C:\Technologies\С#\entity\1. Entity Intro\Country\bin\Debug\net8.0\Country.dll
+C:\Technologies\С#\entity\1. Entity Intro\Country\bin\Debug\net8.0\Country.pdb
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.GeneratedMSBuildEditorConfig.editorconfig
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.AssemblyInfoInputs.cache
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.AssemblyInfo.cs
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.csproj.CoreCompileInputs.cache
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.sourcelink.json
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.dll
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\refint\Country.dll
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\Country.pdb
+C:\Technologies\С#\entity\1. Entity Intro\Country\obj\Debug\net8.0\ref\Country.dll

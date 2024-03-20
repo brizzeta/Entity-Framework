@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Classes;
+using Microsoft.EntityFrameworkCore;
 
-
-namespace _1._Entity_Intro
+namespace Country_DbContext
 {
     public class CountryDBContext : DbContext
     {

@@ -1045,6 +1045,32 @@
             "rid": "win"
           }
         }
+      },
+      "Country/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Country.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Country.dll": {}
+        }
+      },
+      "CountryDbContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Country": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.3",
+          "Microsoft.EntityFrameworkCore.Proxies": "8.0.3",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.3"
+        },
+        "compile": {
+          "bin/placeholder/CountryDbContext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CountryDbContext.dll": {}
+        }
       }
     }
   },
@@ -2869,10 +2895,22 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Country/1.0.0": {
+      "type": "project",
+      "path": "../Country/Country.csproj",
+      "msbuildProject": "../Country/Country.csproj"
+    },
+    "CountryDbContext/1.0.0": {
+      "type": "project",
+      "path": "../CountryDbContext/CountryDbContext.csproj",
+      "msbuildProject": "../CountryDbContext/CountryDbContext.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Country >= 1.0.0",
+      "CountryDbContext >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.3",
       "Microsoft.EntityFrameworkCore.Proxies >= 8.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.3"
@@ -2909,7 +2947,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Technologies\\С#\\entity\\1. Entity Intro\\CountryDbContext\\CountryDbContext.csproj": {
+              "projectPath": "C:\\Technologies\\С#\\entity\\1. Entity Intro\\CountryDbContext\\CountryDbContext.csproj"
+            },
+            "C:\\Technologies\\С#\\entity\\1. Entity Intro\\Country\\Country.csproj": {
+              "projectPath": "C:\\Technologies\\С#\\entity\\1. Entity Intro\\Country\\Country.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

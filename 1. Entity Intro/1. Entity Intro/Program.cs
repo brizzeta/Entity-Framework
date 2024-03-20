@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Metrics;
+﻿using Classes;
+using CountryDbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1._Entity_Intro
 {
@@ -6,37 +8,6 @@ namespace _1._Entity_Intro
     {
         static void Main(string[] args)
         {
-            using (var context = new CountryDBContext())
-            {
-                if (context.Database.EnsureCreated())
-                {
-                    var continent = new List<Continent>
-                {
-                    new Continent { Name = "Europe" },
-                    new Continent { Name = "Asia" },
-                    new Continent { Name = "Africa" },
-                    new Continent { Name = "North America" },
-                    new Continent { Name = "South America" },
-                };
-                    var countries = new List<Country>
-                    {
-                        new Country(){ Name = "Ukraine", Capital = "Kyiv", Population = 37584321, Area = 603628, Continent = continent[0] },
-                        new Country(){ Name = "Italy", Capital = "Rome", Population = 58746861, Area = 301340, Continent = continent[0] },
-                        new Country(){ Name = "France", Capital = "Paris", Population = 67750000, Area = 643801, Continent = continent[0] },
-                        new Country(){ Name = "Germany", Capital = "Berlin", Population = 83200000, Area = 357592, Continent = continent[0] },
-                        new Country(){ Name = "Poland", Capital = "Warsaw", Population = 37750000, Area = 312696, Continent = continent[0] },
-                        new Country(){ Name = "Japan", Capital = "Tokyo", Population = 125416877, Area = 377975, Continent = continent[1] },
-                        new Country(){ Name = "China", Capital = "Beijing", Population = 1409670000, Area = 9596961, Continent = continent[1] },
-                        new Country(){ Name = "USA", Capital = "Washington", Population = 334914895, Area = 9833520, Continent = continent[3] },
-                        new Country(){ Name = "Canada", Capital = "Ottawa", Population = 40528396, Area = 3855100, Continent = continent[3] },
-                        new Country(){ Name = "Brazil", Capital = "Brasilia", Population = 203062512, Area = 8515767, Continent = continent[4] }
-                    };
-                    context.Continent?.AddRange(continent);
-                    context.Countries?.AddRange(countries);
-                    context.SaveChanges();
-                }
-            }
-            Console.Clear();
             short input = 0;
             while (true)
             {
@@ -49,8 +20,11 @@ namespace _1._Entity_Intro
                                   "7. All countries whose names begin with the letter 'A'\n" +
                                   "8. All countries with an area in the specified range\n" +
                                   "9. All countries that have more than the specified number of inhabitants\n" +
-                                  "0. Exit");
-                Console.Write("Enter:  ");
+                                  "10. Add country\n" +
+                                  "11. Change information\n" +
+                                  "12. Delete country\n" +
+                                  "0. Exit\n");
+                Console.Write("Enter: ");
                 input = short.Parse(Console.ReadLine());
 
                 switch (input)
@@ -62,6 +36,8 @@ namespace _1._Entity_Intro
                     case 2:
                         Console.Clear();
                         AllCountries();
+                        Console.ReadKey();
+                        Console.Clear();
                         continue;
                     case 3:
                         Console.Clear();
@@ -103,6 +79,98 @@ namespace _1._Entity_Intro
                         Console.Clear();
                         CountryWithBiggerPopulation(population);
                         continue;
+                    case 10:
+                        Console.Clear();
+                        Console.Write("Enter a name of country: ");
+                        string country = Console.ReadLine();
+                        Console.Clear();
+                        Console.Write("Enter a capital: ");
+                        string capital = Console.ReadLine();
+                        Console.Clear();
+                        Console.Write("Enter area: ");
+                        float area2 = float.Parse(Console.ReadLine());
+                        Console.Clear();
+                        Console.Write("Enter a population: ");
+                        long population2 = long.Parse(Console.ReadLine());
+                        Console.Clear();
+                        Console.WriteLine("Choose the continent:\n1. Europe\n2. Asia\n3. Africa\n4. North America\n5. South America");
+                        Console.Write(": ");
+                        input = short.Parse(Console.ReadLine());
+                        string continent = string.Empty;
+                        switch (input)
+                        {
+                            case 1:
+                                continent = "Europe";
+                                break;
+                            case 2:
+                                continent = "Asia";
+                                break;
+                            case 3:
+                                continent = "Africa";
+                                break;
+                            case 4:
+                                continent = "North America";
+                                break;
+                            case 5:
+                                continent = "South America";
+                                break;
+                            default:
+                                Console.WriteLine("Not correct.");
+                                continue;
+                        }
+                        Console.Clear();
+                        AddCountry(continent, country, capital, area2, population2);
+                        continue;
+                    case 11:
+                        Console.Clear();
+                        Console.Write("Enter a name of country: ");
+                        string country3 = Console.ReadLine();
+                        Console.Clear();
+                        Console.Write("Enter a capital: ");
+                        string capital3 = Console.ReadLine();
+                        Console.Clear();
+                        Console.Write("Enter area: ");
+                        float area3 = float.Parse(Console.ReadLine());
+                        Console.Clear();
+                        Console.Write("Enter a population: ");
+                        long population3 = long.Parse(Console.ReadLine());
+                        Console.Clear();
+                        Console.WriteLine("Choose the continent:\n1. Europe\n2. Asia\n3. Africa\n4. North America\n5. South America");
+                        Console.Write(": ");
+                        input = short.Parse(Console.ReadLine());
+                        string continent3 = string.Empty;
+                        switch (input)
+                        {
+                            case 1:
+                                continent3 = "Europe";
+                                break;
+                            case 2:
+                                continent3 = "Asia";
+                                break;
+                            case 3:
+                                continent3 = "Africa";
+                                break;
+                            case 4:
+                                continent3 = "North America";
+                                break;
+                            case 5:
+                                continent3 = "South America";
+                                break;
+                            default:
+                                Console.WriteLine("Not correct.");
+                                continue;
+                        }
+                        Console.Clear();
+                        UpdateCountry(input, continent3, country3, capital3, area3, population3);
+                        continue;
+                    case 12:
+                        Console.Clear();
+                        AllCountries();
+                        Console.Write("Enter: ");
+                        input = short.Parse(Console.ReadLine());
+                        Console.Clear();
+                        DeleteCountry(input);
+                        continue;
                     case 0:
                         Console.Clear();
                         break;
@@ -110,6 +178,10 @@ namespace _1._Entity_Intro
                 break;
             }
         }
+
+        /*         -------------------------------------------------------------------      */
+        /*         ---------------------         1  TASK      ------------------------      */
+        /*         -------------------------------------------------------------------      */
 
         static public void AllInfo()
         {
@@ -130,11 +202,14 @@ namespace _1._Entity_Intro
             using (var context = new CountryDBContext())
             {
                 var country = context.Countries.Select(i => i.Name);
+                int j = 1;
+                Console.WriteLine("COUNTRIES\n");
                 foreach (var i in country)
-                    Console.WriteLine($"Country: {i}");
+                {
+                    Console.WriteLine($"{j}. {i}");
+                    j++;
+                }
             }
-            Console.ReadKey();
-            Console.Clear();
         }
 
         static public void Capitals()
@@ -231,6 +306,101 @@ namespace _1._Entity_Intro
                     Console.WriteLine($"Country: {i}");
                 }
             }
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        /*         -------------------------------------------------------------------      */
+        /*         ---------------------         2  TASK      ------------------------      */
+        /*         -------------------------------------------------------------------      */
+
+        public static void AddCountry(string cont, string name, string nameCapital, float area, long population)
+        {
+            using (var context = new CountryDBContext())
+            {
+                try
+                {
+                    var continent = context.Continent.FirstOrDefault(i => i.Name == cont);
+                    if (continent == null)
+                    {
+                        throw new Exception("Continent not found.");
+                    }
+                    var country = new Country { Name = name, Capital = nameCapital, Area = area, Population = population, Continent = continent };
+                    context.Countries.Add(country);
+                    context.SaveChanges();
+                    Console.WriteLine("Country added.");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.ReadKey();
+                    return;
+                }
+            }
+        }
+
+        public static void UpdateCountry(int ID, string cont, string name, string capital, float area, long population)
+        {
+            using (var context = new CountryDBContext())
+            {
+                try
+                {
+                    var country = context.Countries.Include(i => i.Continent).FirstOrDefault(i => i.ID == ID);
+                    if (country == null)
+                    {
+                        throw new Exception("Country not found.");
+                    }
+                    var continent = context.Continent.FirstOrDefault(i => i.Name == cont);
+                    if (continent == null)
+                    {
+                        throw new Exception("Continent not found.");
+                    }
+                    country.Name = name;
+                    country.Capital = capital;
+                    country.Population = population;
+                    country.Area = area;
+                    country.Continent = continent;
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                }
+            }
+            Console.WriteLine("Information updated.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        public static void DeleteCountry(int ID)
+        {
+            using (var context = new CountryDBContext())
+            {
+                try
+                {
+                    var country = context.Countries.FirstOrDefault(c => c.ID == ID);
+                    if (country == null)
+                    {
+                        throw new InvalidOperationException("Country not found.");
+                    }
+
+                    context.Countries.Remove(country);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                }
+            }
+            Console.WriteLine("Country deleted.");
             Console.ReadKey();
             Console.Clear();
         }

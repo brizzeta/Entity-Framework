@@ -1,0 +1,6 @@
+C:\Technologies\С#\entity\1. Entity Intro\DbContext\obj\Debug\net8.0\CountryDbContext.csproj.AssemblyReference.cache
+C:\Technologies\С#\entity\1. Entity Intro\DbContext\obj\Debug\net8.0\CountryDbContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Technologies\С#\entity\1. Entity Intro\DbContext\obj\Debug\net8.0\CountryDbContext.AssemblyInfoInputs.cache
+C:\Technologies\С#\entity\1. Entity Intro\DbContext\obj\Debug\net8.0\CountryDbContext.AssemblyInfo.cs
+C:\Technologies\С#\entity\1. Entity Intro\DbContext\obj\Debug\net8.0\CountryDbContext.csproj.CoreCompileInputs.cache
+C:\Technologies\С#\entity\1. Entity Intro\DbContext\obj\Debug\net8.0\CountryDbContext.sourcelink.json

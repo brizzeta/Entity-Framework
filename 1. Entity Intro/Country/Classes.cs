@@ -1,4 +1,4 @@
-﻿namespace _1._Entity_Intro
+﻿namespace Classes
 {
     public class Country
     {

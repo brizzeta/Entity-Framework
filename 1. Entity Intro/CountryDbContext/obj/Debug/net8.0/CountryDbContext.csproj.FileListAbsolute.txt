@@ -1,0 +1,16 @@
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\bin\Debug\net8.0\CountryDbContext.deps.json
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\bin\Debug\net8.0\CountryDbContext.dll
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\bin\Debug\net8.0\CountryDbContext.pdb
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\bin\Debug\net8.0\Country.dll
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\bin\Debug\net8.0\Country.pdb
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.csproj.AssemblyReference.cache
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.AssemblyInfoInputs.cache
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.AssemblyInfo.cs
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.csproj.CoreCompileInputs.cache
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.sourcelink.json
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.csproj.CopyComplete
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.dll
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\refint\CountryDbContext.dll
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\CountryDbContext.pdb
+C:\Technologies\С#\entity\1. Entity Intro\CountryDbContext\obj\Debug\net8.0\ref\CountryDbContext.dll
